@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events Practice</title>
+
+    <!-- INTERNAL CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .class {
+            color: blue;
+            background-color: beige;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        #fileimp {
+            display: none;
+        }
+
+        #dev {
+            margin-top: 15px;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        form input {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 200px;
+        }
+
+        .card {
+            width: 300px;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile img {
+            width: 100%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="h11">Hello</h1>
+    <h1 class="abx">HHHHHHHHH</h1>
+
+    <div id="container" class="class">
+        This is a container div
+    </div>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+
+    <input type="text" placeholder="Type something"><br><br>
+
+    <a href="https://google.com" target="_blank">Google</a>
+
+    <h3 id="dev">Select any one of them</h3>
+    <select>
+        <option selected disabled>Choose</option>
+        <option value="one">One</option>
+        <option value="two">Two</option>
+        <option value="three">Three</option>
+    </select>
+
+    <div id="ma">
+        <h1>Key Press Output</h1>
+    </div>
+
+    <!-- FILE INPUT -->
+    <div id="main">
+        <input id="fileimp" type="file">
+        <button id="but" type="button">Input file</button>
+
+            <!-- FORM -->
+    <form>
+        <input type="text" placeholder="Name"><br>
+        <input type="text" placeholder="Info"><br>
+        <input type="text" placeholder="Occupation"><br>
+        <input type="text" placeholder="Profile Pic URL"><br>
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+
+
+
+    <!-- JS FILE -->
+    <script src="Event1.js"></script>
+    <script src="dom.js"></script>
+    <script src="DyanmicDom.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Light Dark Mode Practice</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Light Mode (default) */
+        body.light {
+            background: #f8fafc;
+            color: #020617;
+        }
+
+        /* Dark Mode */
+        body.dark {
+            background: #020617;
+            color: #f8fafc;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            background: inherit;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Button styles change with mode */
+        body.light button {
+            background: #020617;
+            color: white;
+        }
+
+        body.dark button {
+            background: #f8fafc;
+            color: #020617;
+        }
+    </style>
+</head>
+
+<body class="light">
+
+    <div class="container">
+        <h1>Light / Dark Mode</h1>
+        <p>
+            This is a practice UI for JavaScript.
+            Click the button to toggle between Light and Dark modes.
+        </p>
+
+        <button id="toggle">Toggle Mode</button>
+    </div>
+
+
+    <script src="Storage.js">
+
+        //Optimized code by chatgpt of my code that is in Storage.js
+        const body = document.body;
+        const btn = document.querySelector("button");
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+        /* Apply theme helper */
+        function applyTheme(theme) {
+            body.classList.remove("light", "dark");
+            body.classList.add(theme);
+            localStorage.setItem("theme", theme);
+        }
+
+        /* Detect system theme */
+        function getSystemTheme() {
+            return mediaQuery.matches ? "dark" : "light";
+        }
+
+        /* Initial theme setup */
+        const savedTheme = localStorage.getItem("theme");
+        applyTheme(savedTheme || getSystemTheme());
+
+        /* Manual toggle */
+        btn.addEventListener("click", () => {
+            const newTheme = body.classList.contains("dark") ? "light" : "dark";
+            applyTheme(newTheme);
+        });
+
+        /* React to system theme change ONLY if user didn't override */
+        mediaQuery.addEventListener("change", () => {
+            if (!localStorage.getItem("theme")) {
+                applyTheme(getSystemTheme());
+            }
+        });
+
+    </script>
+</body>
+
+</html>
