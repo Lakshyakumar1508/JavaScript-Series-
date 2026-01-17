@@ -53,5 +53,16 @@ pr.then(function(val){
     console.log("then",val)
 }).catch(function(val){
     console.log("catch",val)
-})
+})     //catch rejected with 3
+
+//Async,Await
+async function abcd(){
+    try{
+    let val=await pr;}
+    catch(err){
+        console.log(err)
+    }
+}
+
+abcd()  //rejected with 3
 
